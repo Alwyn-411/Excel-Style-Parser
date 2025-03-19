@@ -179,11 +179,6 @@ export const ExcelReader: React.FC = () => {
 
         const stylesData = await ParseWithStyles.parseExcelStyles(file);
 
-        const filteredStyles = ParseWithStyles.filterStyles(
-          stylesData,
-          (cellData) => cellData.style?.font?.bold === true
-        );
-
         setCellStyles(stylesData);
         setFileData(workbook);
       } catch (error) {
